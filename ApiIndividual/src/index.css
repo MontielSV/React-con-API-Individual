@@ -1,0 +1,123 @@
+:root {
+  --space-black: #05070a;
+  --space-blue: #005288;
+  --neon-blue: #58a6ff;
+  --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--space-black);
+  background-image: 
+    radial-gradient(circle at 50% 50%, #111e31 0%, #05070a 100%);
+  color: #e6edf3;
+  min-height: 100vh;
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #30363d;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+nav a {
+  color: #8b949e;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px var(--neon-blue);
+}
+
+.rocket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rocket-card {
+  background: var(--glass);
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.rocket-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--neon-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.rocket-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: grayscale(30%);
+  transition: 0.3s;
+}
+
+.rocket-card:hover img {
+  filter: grayscale(0%);
+}
+
+.rocket-info {
+  padding: 20px;
+}
+
+.rocket-info h3 {
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.controls {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  width: 300px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.active { background: rgba(46, 160, 67, 0.15); color: #3fb950; border: 1px solid #2ea043; }
+.inactive { background: rgba(248, 81, 73, 0.15); color: #f85149; border: 1px solid #f85149; }
